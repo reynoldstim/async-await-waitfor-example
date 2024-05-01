@@ -12,7 +12,7 @@ describe('App', () => {
     setItemSpy.mockClear()
   })
 
-  it('saves input text to local storage.', () => {
+  it('saves input text to local storage.', async () => {
     // arrange
     render(<App />);
     const input = screen.getByPlaceholderText('Enter text...');
@@ -23,7 +23,7 @@ describe('App', () => {
     fireEvent.click(saveButton);
 
     //assert
-    waitFor(() => {
+    await waitFor(() => {
         expect(localStorage.setItem).toHaveBeenCalledWith('inputText', JSON.stringify('hello'));
         console.log("In wait for!")
     });
