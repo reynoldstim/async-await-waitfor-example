@@ -20,7 +20,9 @@ const InputTextProvider = ({ children }: PropsWithChildren) => {
   const [inputText, setInputText] = useLocalStorage<string>('inputText', '');
 
   const saveInputText = (value: string) => {
-    setInputText(value);
+    setTimeout(() => {
+      //setInputText(value);
+    }, 250);
   };
 
   const value: InputTextContextType = {
