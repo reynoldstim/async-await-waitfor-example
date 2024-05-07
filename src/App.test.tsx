@@ -24,8 +24,7 @@ describe('App', () => {
 
     //assert
     await waitFor(() => {
-        expect(localStorage.setItem).toHaveBeenCalledWith('inputText', JSON.stringify('hello'));
-        console.log("In wait for!")
+      expect(localStorage.setItem).toHaveBeenCalledWith('inputText', JSON.stringify('hello'));
     });
   });
 });
