@@ -1,6 +1,6 @@
 # Async-Await and WaitFor
 
-This is a demo project illustrating how misuse and misunderstanding of async-await and [Testing Library's](https://testing-library.com/docs/dom-testing-library/api-async/#waitfor) _waitFor_ can lead to flaky tests.
+This is a demo project illustrating how missing a critical detail related to using async-await and [Testing Library's](https://testing-library.com/docs/dom-testing-library/api-async/#waitfor) _waitFor_ can lead to flaky tests.
 
 You can read all about it by subscribing to my newsletter [here, at BiodigitalJazz.tech!](https://www.biodigitaljazz.tech/)
 
@@ -24,3 +24,5 @@ You can check out each of the following branches to follow along with the progre
 3. Execute `npm install`.
 4. To run the app, execute `npm run dev`, and navigate to `http://localhost:5173/`
 5. If you're using VSCode, you can install the [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) extension to run and examine the UI tests.
+6. The application is broken by default (nothing will save to local storage). You can check out and run branch `005/fix-implementation` to see the working iteration.
+
