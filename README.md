@@ -2,7 +2,7 @@
 
 This is a demo project illustrating how misuse and misunderstanding of async-await and [Testing Library's](https://testing-library.com/docs/dom-testing-library/api-async/#waitfor) _waitFor_ can lead to flaky tests.
 
-You can read all about it by subscribing to my newsletter [here, at BiodigitalJazz.tech!](https://www.biodigitaljazz.tech/)
+You can read all about it by subscribing to my newsletter at [BiodigitalJazz.tech](https://www.biodigitaljazz.tech/p/waitfor-me).
 
 This project was initialized using [Vite](https://vitejs.dev/).
 
