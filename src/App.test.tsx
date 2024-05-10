@@ -1,30 +1,22 @@
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
-import { describe, expect, it, vi, afterEach } from 'vitest';
+import { describe, expect, it} from 'vitest';
 import App from './App';
 
 describe('App', () => {
-  const getItemSpy = vi.spyOn(Storage.prototype, 'getItem')
-  const setItemSpy = vi.spyOn(Storage.prototype, 'setItem')
-
-  afterEach(() => {
-    localStorage.clear()
-    getItemSpy.mockClear()
-    setItemSpy.mockClear()
-  })
-
-  it('saves input text to local storage.', () => {
+  // This test will pass, even though the functionality is broken. What's wrong?
+  it('reverses entered text and displays reversed text to user', () => {
     // arrange
     render(<App />);
     const input = screen.getByPlaceholderText('Enter text...');
-    const saveButton = screen.getByText('Save');
+    const reverseButton = screen.getByText('Reverse!');
 
-    //act
-    fireEvent.change(input, { target: { value: 'hello' } });
-    fireEvent.click(saveButton);
+    // act
+    fireEvent.change(input, { target: { value: 'hello' } }); 
+    fireEvent.click(reverseButton);
 
-    //assert
+    // assert
     waitFor(() => {
-        expect(localStorage.setItem).toHaveBeenCalledWith('inputText', JSON.stringify('hello'));
+      expect(screen.getByText('olleh')).toBeInTheDocument();
     });
   });
 });
